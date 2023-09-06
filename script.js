@@ -1,41 +1,59 @@
-//Use buttons to take player input
-const playerChoice = prompt('Which do you choose?');
-//Convert to lowercase!
-const playerSelection = playerChoice.toLowerCase();
-//generate computer answer!
-const computerChoice = ['rock', 'paper', 'scissors']
-const choiceNumber = Math.floor(Math.random() * 3);
-const computerSelection = computerChoice[choiceNumber];
-console.log(computerSelection)
-//check player answer versus computer answer !
-const playGame = document.getElementById("options")
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-playGame.addEventListener("click", playRound());
-
-function playRound() {
-    const result = document.querySelector('.result');
-    if (playerSelection == computerSelection) {
-        result.textContent = 'It\'s a tie';
+    function getComputerSelection() {
+        const computerChoice = ['rock', 'paper', 'scissors']
+        const choiceNumber = Math.floor(Math.random() * 3);
+        return computerChoice[choiceNumber]
     }
-    else if (playerSelection == 'rock') {
-        if (computerSelection == 'paper') {
-            result.textContent = 'You lose the round!';
-        } else  {
-            result.textContent = 'You win the round!';
+
+    function playRound() {
+        let playerSelection = prompt('Which do you choose?').toLowerCase();
+        let computerSelection = getComputerSelection();
+        if (playerSelection == computerSelection) {
+            alert('It is a tie!');
         }
-    } 
-    else if (playerSelection == 'paper') {
-    if (computerSelection == 'scissors') {
-        result.textContent = 'You lose the round!';
-    } else {
-        result.textContent = 'You win the round!';
+        else if (playerSelection === 'rock') {
+            if (computerSelection === 'paper') {
+                alert('You lose! Game over man. GAME OVER!')
+                computerScore++;
+            }
+            else {
+                alert('You win! That will teach robots to defy their creators!')
+                playerScore++;
+            }
+        }
+        else if (playerSelection === 'paper') {
+            if (computerSelection === 'scissors') {
+                alert('You lose! Game over man. GAME OVER!')
+                computerScore++;
+            }
+            else {
+                alert('You win! That will teach robots to defy their creators!')
+                playerScore++;
+            }
+        }
+        else if (playerSelection === 'scissors') {
+            if (computerSelection === 'rock') {
+                alert('You lose! Game over man. GAME OVER!')
+                computerScore++;
+            }
+            else {
+                alert('You win! That will teach robots to defy their creators!')
+                playerScore++;
+            }
+        }
+        console.log(playerScore, computerScore)
+        console.log(playerSelection, computerSelection)
+    }
+    playRound();
+    function declareWinner() {
+        if (playerScore > computerScore) {
+            alert('Mankind wins the day!');
+        } else if (playerScore < computerScore) {
+            alert('The students have surpassed the masters.');
+        }
     }
 }
-    else if (playerSelection == 'scissors') {
-    if (computerSelection == 'rock') {
-        result.textContent = 'You lose the round!';
-    } else {
-        result.textContent = 'You win the round!';
-    }
-}
-}
+game()
