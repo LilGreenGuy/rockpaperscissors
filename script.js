@@ -1,4 +1,6 @@
 function game() {
+    let playerSelection;
+    let computerSelection;
     let playerScore = 0;
     let computerScore = 0;
 
@@ -10,42 +12,26 @@ function game() {
 
     function playRound() {
         let playerSelection = prompt('Which do you choose?').toLowerCase();
-        let computerSelection = getComputerSelection();
+        let computerSelection = getComputerSelection().toLowerCase();
         if (playerSelection == computerSelection) {
             alert('It is a tie!');
         }
-        else if (playerSelection === 'rock') {
-            if (computerSelection === 'paper') {
-                alert('You lose! Game over man. GAME OVER!')
-                computerScore++;
-            }
-            else {
-                alert('You win! That will teach robots to defy their creators!')
-                playerScore++;
-            }
-        }
-        else if (playerSelection === 'paper') {
-            if (computerSelection === 'scissors') {
-                alert('You lose! Game over man. GAME OVER!')
-                computerScore++;
-            }
-            else {
-                alert('You win! That will teach robots to defy their creators!')
-                playerScore++;
-            }
-        }
-        else if (playerSelection === 'scissors') {
-            if (computerSelection === 'rock') {
-                alert('You lose! Game over man. GAME OVER!')
-                computerScore++;
-            }
-            else {
-                alert('You win! That will teach robots to defy their creators!')
-                playerScore++;
-            }
+        else if (
+            (computerSelection == 'rock' && playerSelection == 'scissors') ||
+            (computerSelection == 'paper' && playerSelection == 'rock') ||
+            (computerSelection == 'scissors' && playerSelection == 'paper')
+        ) {
+            alert('Automatons have won this round!');
+            computerScore++
+        } else {
+            alert('You win the round!');
+            playerScore++
         }
         console.log(playerScore, computerScore)
         console.log(playerSelection, computerSelection)
+        if (playerScore < 5 && computerScore < 5) {
+            playRound();
+        }
     }
     playRound();
     function declareWinner() {
