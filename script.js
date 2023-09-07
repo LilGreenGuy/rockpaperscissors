@@ -31,6 +31,8 @@ function game() {
         console.log(playerSelection, computerSelection)
         if (playerScore < 5 && computerScore < 5) {
             playRound();
+        } else {
+            declareWinner();
         }
     }
     playRound();
@@ -38,7 +40,7 @@ function game() {
         if (playerScore > computerScore) {
             alert('Mankind wins the day!');
         } else if (playerScore < computerScore) {
-            alert('The students have surpassed the masters.');
+            alert('The robot uprising is finally upon us.');
         }
     }
 }
