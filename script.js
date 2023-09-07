@@ -5,9 +5,9 @@ function game() {
     let computerScore = 0;
 
     function getComputerSelection() {
-        const computerChoice = ['rock', 'paper', 'scissors']
+        const computerChoice = ['rock', 'paper', 'scissors'];
         const choiceNumber = Math.floor(Math.random() * 3);
-        return computerChoice[choiceNumber]
+        return computerChoice[choiceNumber];
     }
 
     function playRound() {
@@ -22,13 +22,13 @@ function game() {
             (computerSelection == 'scissors' && playerSelection == 'paper')
         ) {
             alert('Automatons have won this round!');
-            computerScore++
+            computerScore++;
         } else {
             alert('You win the round!');
-            playerScore++
+            playerScore++;
         }
-        console.log(playerScore, computerScore)
-        console.log(playerSelection, computerSelection)
+        console.log(playerScore, computerScore);
+        console.log(playerSelection, computerSelection);
         if (playerScore < 5 && computerScore < 5) {
             playRound();
         } else {
