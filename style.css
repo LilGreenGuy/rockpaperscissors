@@ -1,0 +1,121 @@
+body {
+    background: url(./background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: #9dd1f160;
+    border-bottom: 0.1rem solid white;
+}
+
+.logo {
+    margin: 10px;
+    font-weight: 900;
+    font-size: 3rem;
+    /* color: white; */
+}
+
+.links {
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    margin-right: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(52, 52, 52);
+}
+
+a:hover {
+    color: #bbd4b6;
+}
+
+.choiceBtn {
+    font-size: 10rem;
+    border-radius: 1rem;
+    transition: .5s;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    margin: 3rem;
+    border: .2rem solid rgba(0, 0, 0, 0.5);
+    border-radius: .5rem;
+}
+
+.choiceBtn:hover {
+    transform: scale(1.2);
+    color: #3b322c;
+}
+
+.movesleft {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.results {
+    display: grid;
+    justify-content: center;
+    font-size: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.result-score {
+    margin-left: 2rem;
+    font-size: .7em;
+    color: #424242;
+}
+
+.result-selection {
+    opacity: .5;
+}
+
+.result-selection.winner {
+    opacity: 1;
+    font-size: 1.5em;
+}
+
+.reload {
+    display: flex;
+    font-size: 3rem;
+    background-color: #23395b;
+    border-radius: .5rem;
+    border-style: none;
+    transition: 300ms;
+}
+
+.reload:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+.endgame {
+    text-align: center;
+}
