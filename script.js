@@ -76,7 +76,7 @@ const gameOver = (playerOptions, movesLeft) => {
     const reloadBtn = document.createElement('button');
     const results = document.createElement('h1');
     results.classList.add('endgame');
-    results.style.color = 'white';
+    // results.style.color = 'white';
     restart.appendChild(results)
     playerChoices.forEach(choice => {
         console.log(playerScore, computerScore)
