@@ -76,27 +76,25 @@ const gameOver = (playerOptions, movesLeft) => {
     const reloadBtn = document.createElement('button');
     const results = document.createElement('h1');
     results.classList.add('endgame');
-    // results.style.color = 'white';
-    restart.appendChild(results)
+    restart.appendChild(results);
     playerChoices.forEach(choice => {
-        console.log(playerScore, computerScore)
         choice.style.display = 'none';
     })
     movesLeft.style.display = 'none';
 
     if (playerScore > computerScore) {
         results.style.fontSize = '3rem';
-        results.innerText = 'You have won the game! Congratulations!'
+        results.innerText = 'You have won the game! Congratulations!';
     } else if(playerScore < computerScore) {   
         results.style.fontSize = '3rem';
-        results.innerText = 'You have lost the game! Try again next time!'
+        results.innerText = 'You have lost the game! Try again next time!';
     } else {
         results.style.fontSize = '3rem';
-        results.innerText = 'It\'s a tie game! No one wins but you both lose!'
+        results.innerText = 'It\'s a tie game! No one wins but you both lose!';
     }
     reloadBtn.classList.add('reload');
-    reloadBtn.innerText = 'Restart?'
-    reloadBtn.style.display = 'flex'
+    reloadBtn.innerText = 'Restart?';
+    reloadBtn.style.display = 'flex';
     restart.appendChild(reloadBtn);
     reloadBtn.addEventListener('click', e => {
         window.location.reload();
